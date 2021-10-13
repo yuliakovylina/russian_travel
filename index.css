@@ -215,7 +215,7 @@ h5, h6, p, div {
     z-index: 1;
     width: 1184px;
     min-height: 740px;
-    background-image: url("./images/__background.png");
+    background-image: url("./images/background.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
