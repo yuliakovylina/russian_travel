@@ -20,7 +20,6 @@ h5, h6, p, div {
     margin: 0;
     padding: 28px 48px 0;
     background-color: #2A2C2F;
-    height: 6875px;
     font-family: Inter;
     color: white;
 }
@@ -67,7 +66,7 @@ h5, h6, p, div {
 }
 
 .header__lead {
-    width: 984px;
+    max-width: 984px;
     margin: auto;
 }
 
@@ -214,7 +213,6 @@ h5, h6, p, div {
 
 .overlay {
     position: relative;
-    z-index: 1;
     width: 1184px;
     min-height: 740px;
     background-image: url("./images/background.png");
@@ -222,45 +220,61 @@ h5, h6, p, div {
     background-repeat: no-repeat;
 }
 
-.overlay__cover {
+.overlay__link {
     position: absolute;
     width: 100%;
     height: 100%;
     color: white;
     text-decoration: none;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.overlay__cover:before {
+.overlay__cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #2A2C2F;
+    opacity: 0.3;
+    z-index: 1;
+}
+.overlay__cover:hover {
+    opacity: 0.8;
+    transition: all 0.5s linear;
+}
+/*.overlay__cover:before {
     content: '';
     background-color: #2A2C2F;
     opacity: 0.3;
     transition: all 0.5s linear;
     z-index: -1;
-}
-
+}*/
+/*
 .overlay__cover:hover:before{
     background: rgba(42, 44, 47, 0.8);
-}
+}*/
 
 .overlay__title {
     position: relative;
-    z-index: 2;
     font-size: 72px;
     line-height: 76px;
     text-align: center;
     max-width: 560px;
+    z-index: 2;
+
 }
 
 .overlay__subtitle {
+    position: relative;
     font-size: 18px;
     line-height: 22px;
     text-align: center;
     max-width: 360px;
     margin: 32px auto 0;
+    z-index: 2;
 }
 .footer {
 
@@ -289,4 +303,64 @@ h5, h6, p, div {
 
 .footer__copyright {
 
+}
+
+/*/////////////////////////////////////////////////////////////////////////
+                              ADAPTIVE CSS
+///////////////////////////////////////////////////////////////////////////
+ */
+@media screen and (max-width: 1279px) {
+    .page {
+        margin: 0 auto;
+        padding: 28px 0 0;
+    }
+
+    .container {
+        max-width: 929px;
+        margin: 0 auto;
+    }
+
+    .header {
+        max-width: 928px;
+        margin: 0 0 90px;
+
+    }
+
+    .header__lead {
+        max-width: 928px;
+        margin: 0;
+    }
+
+    .header__lead__image {
+        width: 928px;
+    }
+
+    .intro {
+        padding: 0;
+        margin-bottom: 90px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        max-width: 928px;
+        margin: 0 0 90px;
+
+    }
+
+    .cards {
+        padding: 0;
+        max-width: 928px;
+    }
+
+    .overlay {
+        top: 0;
+        left: -48px;
+        width: 1024px;
+        min-height: 640px;
+    }
+
+    .footer-container {
+        max-width: 928px;
+    }
 }
