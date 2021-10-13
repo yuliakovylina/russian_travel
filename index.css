@@ -26,8 +26,9 @@ h5, h6, p, div {
 }
 
 .container {
-    max-width: 1280px;
+    max-width: 1184px;
     margin: 0 auto;
+    border: 1px solid red;
 }
 
 .header {
@@ -67,7 +68,9 @@ h5, h6, p, div {
 }
 
 .header__lead {
-    padding: 0 100px 0;
+    width: 984px;
+    margin: auto;
+    border: 1px solid red;
 }
 
 .header__lead__title {
@@ -94,7 +97,9 @@ h5, h6, p, div {
 }
 
 .header__lead__image {
+    width: 984px;
     margin-bottom: 8px;
+    border: 1px solid red;
 }
 
 .header__lead__caption {
