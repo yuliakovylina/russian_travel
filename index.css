@@ -27,7 +27,6 @@ h5, h6, p, div {
 .container {
     max-width: 1184px;
     margin: 0 auto;
-    border: 1px solid red;
 }
 
 .header {
@@ -251,17 +250,6 @@ h5, h6, p, div {
     opacity: 0.8;
     transition: all 0.5s linear;
 }
-/*.overlay__cover:before {
-    content: '';
-    background-color: #2A2C2F;
-    opacity: 0.3;
-    transition: all 0.5s linear;
-    z-index: -1;
-}*/
-/*
-.overlay__cover:hover:before{
-    background: rgba(42, 44, 47, 0.8);
-}*/
 
 .overlay__title {
     position: relative;
@@ -313,6 +301,7 @@ h5, h6, p, div {
 
 /*/////////////////////////////////////////////////////////////////////////
                               ADAPTIVE CSS
+                                 1024px
 ///////////////////////////////////////////////////////////////////////////
  */
 @media screen and (max-width: 1279px) {
@@ -329,6 +318,10 @@ h5, h6, p, div {
     .header {
         max-width: 928px;
         margin: 0 0 90px;
+    }
+
+    .header__top {
+        margin: 0 auto 48px;
     }
 
     .header__lead {
@@ -355,6 +348,7 @@ h5, h6, p, div {
     .cards {
         padding: 0;
         max-width: 928px;
+        margin: 0 auto;
     }
 
     .card__title {
@@ -378,11 +372,14 @@ h5, h6, p, div {
         max-width: 928px;
     }
 }
+/*/////////////////////////////////////////////////////////////////////////
+                              768px
+///////////////////////////////////////////////////////////////////////////
+ */
 
 @media screen and (max-width: 1023px) {
     .page {
-        width:768px;
-        border: 2px solid green;
+
     }
     .container {
         width: 768px;
@@ -435,14 +432,14 @@ h5, h6, p, div {
         width: 720px;
         max-width: 720px;
         padding: 0;
-        margin: 0 0 88px;
+        margin: 0 auto 88px;
     }
 
     .gallery {
         grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
         gap: 16px;
         max-width: 720px;
-        margin: 0 0 88px;
+        margin: 0 auto 88px;
     }
 
     .cards {
@@ -474,7 +471,7 @@ h5, h6, p, div {
 
     .overlay {
         top: 0;
-        left: -26px;
+        left: 0;
         min-height: 480px;
         max-width: 768px;
     }
@@ -487,12 +484,6 @@ h5, h6, p, div {
         width: 720px
     }
 
-    .footer__menu {
-        display: flex;
-        list-style: none;
-        padding: 0;
-    }
-
     .footer__menu-item {
         margin-right: 18px;
         font-size: 16px;
@@ -501,14 +492,185 @@ h5, h6, p, div {
         color: white;
     }
 
-    .footer__copyright {
-
-    }
 }
 
-@media screen and (max-width: 460px) {
+/*/////////////////////////////////////////////////////////////////////////
+                              320px
+///////////////////////////////////////////////////////////////////////////
+ */
+@media screen and (max-width: 767px) {
     .page {
-        max-width: 460px;
+        padding-top: 16px;
+    }
+    .container {
+        width: 320px;
+        min-width: 320px;
+    }
+
+    .header {
+        max-width: 320px;
+        margin: 0 0 64px;
+    }
+
+    .header__top {
+        width: 320px;
+    }
+
+    .header__logo{
+        width: 142px;
+        height: 42px;
+    }
+
+    .header__lang {
+        display: flex;
+        justify-content: space-between;
+        width: 77px;
+    }
+
+    .header__lang-link {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .header__lead {
+        max-width:320px;
+    }
+
+    .header__lead__title {
+        font-size: 40px;
+        line-height: 44px;
+        width: 288px;
+        margin: 0 auto 16px;
+
+    }
+
+    .header__lead__subtitle {
+        font-size: 16px;
+        line-height: 20px;
+        width: 288px;
+        margin: 0 auto 40px;
+    }
+
+    .header__lead__caption {
+        margin-left: 16px;
+    }
+
+    .intro {
+        width: 288px;
+        max-width: 320px;
+        margin: 0 auto 64px;
+    }
+
+    .intro__title {
+        font-size: 32px;
+        line-height: 35px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, 288px);
+        gap: 12px;
+        max-width: 320px;
+        margin: 0 auto 64px;
+        justify-content: center;
+    }
+
+
+    .cards {
+        max-width: 320px;
+    }
+
+    .card {
+        margin-bottom: 50px;
+    }
+
+    .card__top {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 48px;
+    }
+
+    .card__title {
+        font-size: 32px;
+        line-height: 35px;
+        width: 288px;
+        margin: 0 auto;
+    }
+
+    .card__website {
+        width: 288px;
+        margin: 32px auto 0;
+    }
+
+    .card__bottom {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card__image {
+        max-width: 320px;
+        max-height: 320px;
+        margin-right: 0;
+        margin-bottom: 32px;
+    }
+
+    .card__paragraph {
+        width: 288px;
+        margin: 0 auto 25px;
+    }
+
+    .overlay {
+        top: 0;
+        left: 0;
+        min-height: 200px;
+        max-width: 320px;
+    }
+
+    .overlay__title {
+        font-size: 32px;
+        line-height: 35px;
+        max-width: 250px;
+        z-index: 2;
+    }
+
+    .overlay__subtitle {
+        font-size: 14px;
+        line-height:16px;
+        max-width: 265px;
+        margin: 16px auto 0;
+        z-index: 2;
+    }
+
+    .footer {
+    }
+
+    .footer-container {
+        height: 310px;
+        margin: 64px auto 16px;
+        width: 288px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__menu {
+        flex-direction: column;
+        justify-content: space-between;
+        height: 70%;
+    }
+
+    .footer__menu-item {
+        margin-right: 0;
+        margin-top: 60px;
+        font-size: 24px;
+        line-height: 24px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .footer__copyright {
+        font-size: 14px;
+        line-height: 14px;
+        text-decoration: none;
+        color: white;
     }
 }
 
