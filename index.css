@@ -17,7 +17,7 @@ h5, h6, p, div {
 }
 
 .page {
-    margin: 0;
+    margin: 0 auto;
     padding: 28px 48px 0;
     background-color: #2A2C2F;
     font-family: Inter;
@@ -27,6 +27,7 @@ h5, h6, p, div {
 .container {
     max-width: 1184px;
     margin: 0 auto;
+    border: 1px solid red;
 }
 
 .header {
@@ -139,11 +140,14 @@ h5, h6, p, div {
 .gallery {
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(4, 284px);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(284px, 1fr));
     gap: 16px;
     margin: 0 auto 90px;
     max-width: 1184px;
+}
+
+.gallery__item {
+    width: 100%;
 }
 
 .cards {
@@ -197,6 +201,7 @@ h5, h6, p, div {
 
 .card__image {
     max-width: 460px;
+    max-height: 460px;
     margin-right: 40px;
 }
 
@@ -218,6 +223,7 @@ h5, h6, p, div {
     background-image: url("./images/background.png");
     background-size: contain;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .overlay__link {
@@ -311,28 +317,27 @@ h5, h6, p, div {
  */
 @media screen and (max-width: 1279px) {
     .page {
-        margin: 0 auto;
+
         padding: 28px 0 0;
     }
 
     .container {
         max-width: 929px;
-        margin: 0 auto;
+
     }
 
     .header {
         max-width: 928px;
         margin: 0 0 90px;
-
     }
 
     .header__lead {
-        max-width: 928px;
+        width: 100%;
         margin: 0;
     }
 
     .header__lead__image {
-        width: 928px;
+        width: 100%;
     }
 
     .intro {
@@ -341,26 +346,169 @@ h5, h6, p, div {
     }
 
     .gallery {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-        max-width: 928px;
-        margin: 0 0 90px;
-
-    }
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         gap: 14px;
+         max-width: 928px;
+         margin: 0 0 90px;
+     }
 
     .cards {
         padding: 0;
         max-width: 928px;
     }
 
+    .card__title {
+        width: 440px;
+        margin-right: 32px;
+    }
+
+    .card__image {
+        max-width: 440px;
+        max-height: 440px;
+        margin-right: 32px;
+    }
+
     .overlay {
         top: 0;
         left: -48px;
-        width: 1024px;
         min-height: 640px;
+        max-width: 1024px;
     }
-
     .footer-container {
         max-width: 928px;
     }
 }
+
+@media screen and (max-width: 1023px) {
+    .page {
+        width:768px;
+        border: 2px solid green;
+    }
+    .container {
+        width: 768px;
+        min-width: 768px;
+
+    }
+
+    .header {
+        max-width: 768px;
+        margin: 0 0 90px;
+    }
+
+    .header__top {
+        width: 720px;
+    }
+
+    .header__lead {
+        max-width:768px;
+        margin: auto;
+    }
+
+    .header__lead__title {
+        font-weight: 900;
+        font-size: 96px;
+        line-height: 100px;
+        text-align: center;
+        width: 720px;
+        margin: 0 auto 32px;
+
+    }
+
+    .header__lead__subtitle {
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 36px;
+        text-align: center;
+        width: 640px;
+        margin: 0 auto 64px;
+    }
+
+    .header__lead-container {
+        margin: auto;
+    }
+
+    .header__lead__caption {
+        margin-left: 24px;
+    }
+
+    .intro {
+        width: 720px;
+        max-width: 720px;
+        padding: 0;
+        margin: 0 0 88px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
+        gap: 16px;
+        max-width: 720px;
+        margin: 0 0 88px;
+    }
+
+    .cards {
+        padding: 0;
+        max-width: 720px;
+    }
+
+    .card {
+        margin-bottom: 73px;
+    }
+
+    .card__title {
+        font-size: 42px;
+        line-height: 46px;
+        width: 340px;
+        margin-right: 28px;
+    }
+
+    .card__image {
+        max-width: 340px;
+        max-height: 340px;
+        margin-right: 28px;
+    }
+
+    .card__paragraph {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .overlay {
+        top: 0;
+        left: -26px;
+        min-height: 480px;
+        max-width: 768px;
+    }
+
+    .footer {
+
+    }
+
+    .footer-container {
+        width: 720px
+    }
+
+    .footer__menu {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer__menu-item {
+        margin-right: 18px;
+        font-size: 16px;
+        line-height: 18px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .footer__copyright {
+
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .page {
+        max-width: 460px;
+    }
+}
+
